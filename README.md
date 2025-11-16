@@ -23,7 +23,7 @@ To change the content of the site, update the corresponding file. For instance, 
 
 ### Spotify widget
 
-You can update the spotify widget displayed in the website by changing the `spotify.html` file.
+You can update the spotify widget displayed in the website by changing the `iframe` block within the `index.html` file.
 
 1. Head to the artist's (spotify page)[https://open.spotify.com/artist/5dWRkpyqnoYDNouN02NDdk]
 2. Open the playlist/album/track on you want to display in the website.
