@@ -46,4 +46,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('click', closeDropdowns);
+
+  const includeTargets = document.querySelectorAll('[data-include]');
+  includeTargets.forEach((target) => {
+    const src = target.getAttribute('data-include');
+    if (!src) {
+      return;
+    }
+
+    fetch(src)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Failed to load ${src}`);
+        }
+
+        return response.text();
+      })
+      .then((html) => {
+        target.innerHTML = html;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  });
 });
